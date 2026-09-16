@@ -36,8 +36,14 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
+          set -o pipefail
+          if [ -z "$VERCEL_TOKEN" ] || [ "$VERCEL_PROJECT_ID" = "<prj_... of the *-prod project>" ]; then
+            echo "::error ::Missing Vercel secrets/IDs. Add VERCEL_TOKEN secret + real project IDs (see file header)."
+            exit 1
+          fi
           URL=$(vercel deploy --prod --token "$VERCEL_TOKEN" --yes \
             | grep -oP 'https://[^\s]+' | head -1)
+          [ -n "$URL" ] || { echo "::error ::Deploy produced no URL."; exit 1; }
           echo "Production deployment: $URL"
           echo "::notice ::Production deployment: $URL"
 
@@ -57,7 +63,13 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
+          set -o pipefail
+          if [ -z "$VERCEL_TOKEN" ] || [ "$VERCEL_PROJECT_ID" = "<prj_... of the *-dev project>" ]; then
+            echo "::error ::Missing Vercel secrets/IDs. Add VERCEL_TOKEN secret + real project IDs (see file header)."
+            exit 1
+          fi
           URL=$(vercel deploy --prod --token "$VERCEL_TOKEN" --yes \
             | grep -oP 'https://[^\s]+' | head -1)
+          [ -n "$URL" ] || { echo "::error ::Deploy produced no URL."; exit 1; }
           echo "Development deployment: $URL"
           echo "::notice ::Development deployment: $URL"
