@@ -1,0 +1,142 @@
+# SaaS Landing
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI - Modern AI Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .dark {
+            color-scheme: dark;
+        }
+        .gradient-dark {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="dark bg-gray-950 text-gray-100">
+    <header class="gradient-dark py-6 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">NexusAI</div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Features</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Pricing</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+                Get Started
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="gradient-accent py-20 px-4">
+            <div class="container mx-auto text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Transform Your Business with AI</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">Powerful AI solutions that drive real results and accelerate growth.</p>
+                <button class="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                    Start Free Trial
+                </button>
+                <p class="mt-4 text-sm text-gray-300">No credit card required • 14-day free trial</p>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 bg-gray-900">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-lg p-8 hover:bg-gray-700 transition-colors">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Smart Analytics</h3>
+                        <p class="text-gray-400">Real-time insights and predictive analytics to optimize your operations.</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-lg p-8 hover:bg-gray-700 transition-colors">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Secure Cloud</h3>
+                        <p class="text-gray-400">Enterprise-grade security with seamless cloud integration.</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-lg p-8 hover:bg-gray-700 transition-colors">
+                        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">AI Automation</h3>
+                        <p class="text-gray-400">Automated workflows and intelligent process optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 bg-gray-950">
+            <div class="container mx-auto">
+                <div class="bg-gradient-to-r from-blue-900 to-purple-900 rounded-2xl p-12">
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="mb-8 md:mb-0">
+                            <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
+                            <p class="text-gray-300 text-lg">Choose the plan that best fits your needs and start your AI journey today.</p>
+                        </div>
+                        <button class="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                            View Pricing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold">NexusAI</div>
+                    <p class="text-gray-500 mt-2">© 2024 NexusAI. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Initialize React app
+        const root = document.getElementById('root');
+        if (root) {
+            ReactDOM.createRoot(root).render(
+                <div>
+                    <h1 class="text-4xl font-bold text-center py-20">SaaS Landing Page</h1>
+                    <p class="text-center text-gray-400">Modern dark-themed SaaS landing page for software services</p>
+                </div>
+            );
+        }
+    </script>
+</body>
+</html>

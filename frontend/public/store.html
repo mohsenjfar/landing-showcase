@@ -1,0 +1,133 @@
+# Store Landing
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Collection - Premium Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .minimal {
+            color-scheme: light;
+        }
+        .border-minimal {
+            border-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="minimal bg-white text-gray-900">
+    <header class="py-8 px-4 border-b border-minimal">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-light tracking-wider">HERITAGE COLLECTION</div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#" class="text-gray-700 hover:text-black transition-colors">Shop</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-black transition-colors">About</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-black transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="bg-black text-white px-6 py-2 rounded-none transition-colors hover:bg-gray-800">
+                Account
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 px-4">
+            <div class="container mx-auto text-center">
+                <h1 class="text-6xl md:text-8xl font-light mb-6 tracking-tight">Timeless Elegance</h1>
+                <p class="text-xl md:text-2xl mb-12 text-gray-600 font-light">Curated collection of premium products for the modern lifestyle</p>
+                <button class="border border-black text-black hover:bg-black hover:text-white px-8 py-4 rounded-none font-medium transition-colors">
+                    Shop Collection
+                </button>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 bg-gray-50">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-light text-center mb-16">Featured Collection</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group">
+                        <div class="aspect-square bg-gray-200 mb-4 overflow-hidden">
+                            <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 group-hover:scale-105 transition-transform duration-500"></div>
+                        </div>
+                        <h3 class="text-xl font-medium mb-2">Product 1</h3>
+                        <p class="text-gray-600 mb-2">Premium quality item</p>
+                        <p class="font-semibold">$99.99</p>
+                    </div>
+                    
+                    <div class="group">
+                        <div class="aspect-square bg-gray-200 mb-4 overflow-hidden">
+                            <div class="w-full h-full bg-gradient-to-br from-gray-400 to-gray-500 group-hover:scale-105 transition-transform duration-500"></div>
+                        </div>
+                        <h3 class="text-xl font-medium mb-2">Product 2</h3>
+                        <p class="text-gray-600 mb-2">Handcrafted design</p>
+                        <p class="font-semibold">$149.99</p>
+                    </div>
+                    
+                    <div class="group">
+                        <div class="aspect-square bg-gray-200 mb-4 overflow-hidden">
+                            <div class="w-full h-full bg-gradient-to-br from-gray-500 to-gray-600 group-hover:scale-105 transition-transform duration-500"></div>
+                        </div>
+                        <h3 class="text-xl font-medium mb-2">Product 3</h3>
+                        <p class="text-gray-600 mb-2">Limited edition</p>
+                        <p class="font-semibold">$199.99</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4">
+            <div class="container mx-auto max-w-4xl">
+                <div class="bg-gray-900 text-white p-12 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+                    <p class="text-gray-300 mb-8">Get updates on new collections and exclusive offers.</p>
+                    <div class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 bg-white text-black rounded-none focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <button class="bg-white text-black hover:bg-gray-200 px-8 py-3 rounded-none font-medium transition-colors">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 px-4 border-t border-minimal">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-xl font-light tracking-wider">HERITAGE COLLECTION</div>
+                    <p class="text-gray-500 mt-2 text-sm">© 2024 Heritage Collection. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-black transition-colors text-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Initialize React app
+        const root = document.getElementById('root');
+        if (root) {
+            ReactDOM.createRoot(root).render(
+                <div>
+                    <h1 class="text-4xl font-bold text-center py-20">Store Landing Page</h1>
+                    <p class="text-center text-gray-600">Minimal physical goods store landing page</p>
+                </div>
+            );
+        }
+    </script>
+</body>
+</html>

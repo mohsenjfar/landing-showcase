@@ -1,0 +1,42 @@
+# Node.js packages and build artifacts
+node_modules/
+*.log
+*.tmp
+*.cache
+
+# Build outputs
+dist/
+build/
+*.bundle.js
+*.map
+
+# Environment variables
+.env*
+.env.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log.*
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Testing and coverage
+coverage/
+.nyc_output
+
+# Deployment
+.vercel/
+.netlify/

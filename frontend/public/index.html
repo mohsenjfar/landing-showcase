@@ -1,0 +1,90 @@
+# Hub Index
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Showcase Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Landing Showcase</h1>
+            <p class="text-xl md:text-2xl opacity-90">Professional landing pages for your business needs</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-12">Choose Your Landing Page</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="/saas" class="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="aspect-video bg-gradient-to-br from-blue-600 to-purple-600 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600">SaaS Landing</h3>
+                    <p class="text-gray-600">Modern dark-themed SaaS landing page perfect for software services</p>
+                </div>
+            </a>
+            
+            <a href="/agency" class="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="aspect-video bg-gradient-to-br from-green-500 to-teal-600 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5-4h5m-5-4h5m-5-4h5m-5-4h5"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-green-600">Agency Landing</h3>
+                    <p class="text-gray-600">Light-themed agency page for clinics and real estate services</p>
+                </div>
+            </a>
+            
+            <a href="/store" class="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="aspect-video bg-gradient-to-br from-orange-500 to-red-600 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-orange-600">Store Landing</h3>
+                    <p class="text-gray-600">Minimal physical goods store landing page</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Landing Showcase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize React app
+        const root = document.getElementById('root');
+        if (root) {
+            ReactDOM.createRoot(root).render(<h1>Hub Index</h1>);
+        }
+    </script>
+</body>
+</html>
