@@ -1,11 +1,1 @@
-{
-  "version": 2,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "framework": "vite",
-  "buildCommand": "cd frontend && npm run build"
-}
+{"$schema": "https://openapi.vercel.sh/vercel.json", "cleanUrls": true}

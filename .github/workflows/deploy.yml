@@ -1,41 +1,63 @@
+# Starter workflow: dual Vercel projects, one branch each.
+# Setup (dashboard + repo secrets, done once):
+#   1. Create two Vercel projects (e.g. landing-showcase-prod, landing-showcase-dev)
+#      WITHOUT connecting git (or Settings -> Git -> Disconnect after import).
+#   2. Each project: Settings -> Deployment Protection -> Disabled (public URLs).
+#   3. Copy each project's Project ID (Settings -> General) and the Org ID
+#      (team_... — same for both) below.
+#   4. Repo -> Settings -> Secrets and variables -> Actions: add VERCEL_TOKEN
+#      (same token works for both projects).
+# Behavior: push to main -> --prod deploy on the prod project;
+# push to development -> --prod deploy on the dev project.
+# Static site: no build step, no build env needed.
+
 name: Deploy to Vercel
 
 on:
   push:
-    branches: [main, development]
-
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    branches:
+      - main
+      - development
 
 jobs:
-  deploy:
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: <team_...>
+      VERCEL_PROJECT_ID: <prj_... of the *-prod project>
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
 
-      - name: Install dependencies
-        run: npm install
-        working-directory: frontend
-
-      - name: Build project
-        run: npm run build
-        working-directory: frontend
-
-      - name: Deploy to Vercel
-        run: |
-          npm install -g vercel@latest
-          cd frontend
-          vercel --prod --no-build-env
+      - name: Deploy main to production project
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          URL=$(vercel deploy --prod --token "$VERCEL_TOKEN" --yes \
+            | grep -oP 'https://[^\s]+' | head -1)
+          echo "Production deployment: $URL"
+          echo "::notice ::Production deployment: $URL"
+
+  deploy-development:
+    if: github.ref == 'refs/heads/development'
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: <team_...>
+      VERCEL_PROJECT_ID: <prj_... of the *-dev project>
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
+
+      - name: Deploy development to dev project
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          URL=$(vercel deploy --prod --token "$VERCEL_TOKEN" --yes \
+            | grep -oP 'https://[^\s]+' | head -1)
+          echo "Development deployment: $URL"
+          echo "::notice ::Development deployment: $URL"

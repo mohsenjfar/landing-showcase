@@ -1,35 +1,31 @@
 # Landing Showcase
 
-A collection of eye-catching landing pages built with Vite + React + Tailwind.
+4 static landing pages (pure HTML + Tailwind CDN, zero build step, zero env vars).
+Built as fast portfolio pieces for LinkedIn outreach.
 
 ## Pages
 
-- **/**: Hub index with links and thumbnails
-- **/saas**: Dark modern SaaS landing page
-- **/agency**: Light agency page for clinics/real-estate  
-- **/store**: Minimal physical goods store
+- `/` (index.html): hub with links to all three landings
+- `/saas`: dark modern SaaS landing (NexusAI-style)
+- `/agency`: light agency page (clinics / real-estate)
+- `/store`: minimal physical-goods store
 
-## How to Run
+## Run locally
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
+python3 -m http.server 8000
+# open http://localhost:8000
 ```
 
-## Live Demo
+No `npm install`, no build. What you see locally is exactly what Vercel serves.
 
-[Placeholder URL]
+## Deploy
 
-## Usage
+Push to `development` or `main` triggers `.github/workflows/deploy.yml`
+(needs `VERCEL_TOKEN` secret + the two project IDs filled in).
+One-time setup steps are at the top of that file.
 
-This is a showcase of landing page templates for freelance clients.
+## Live
 
-## Building
-
-Run `npm run build` to create static files for deployment.
+- Dev: <dev vercel url>
+- Prod: <prod vercel url>
